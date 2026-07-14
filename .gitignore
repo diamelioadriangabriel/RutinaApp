@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (por si en algún momento usás `npx serve` o agregás build)
+node_modules/
+.npm/
+
+# Empaquetados temporales
+*.zip

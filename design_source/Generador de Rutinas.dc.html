@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#0d1a12"/><g fill="#7ee81f"><rect x="150" y="130" width="65" height="15"/><rect x="120" y="105" width="12" height="50" rx="4"/><rect x="268" y="105" width="12" height="50" rx="4"/><rect x="90" y="90" width="20" height="80" rx="6"/><rect x="290" y="90" width="20" height="80" rx="6"/></g></svg></template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics=""><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0}
+::-webkit-scrollbar{display:none}
+@keyframes screenIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes detailIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px oklch(87% .27 142 / .4)}50%{box-shadow:0 0 34px oklch(87% .27 142 / .75)}}
+@keyframes glowPulseSecondary{0%,100%{box-shadow:0 0 20px oklch(72% .27 340 / .4)}50%{box-shadow:0 0 34px oklch(72% .27 340 / .75)}}
+.pill,.daycirc,.chip,.cta,.tab,.iconbtn,.smallbtn{transition:transform .15s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.pill:active,.daycirc:active,.chip:active,.cta:active,.tab:active,.iconbtn:active,.smallbtn:active{transform:scale(.94)}
+.pill:active,.daycirc:active,.chip:active,.tab:active{box-shadow:0 0 16px oklch(87% .27 142 / .35)}
+.iconbtn:active,.smallbtn:active{box-shadow:0 0 14px oklch(96% .006 275 / .3)}
+.app{width:100%;height:100%;background:oklch(13% .02 275);color:oklch(96% .006 275);font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.app::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,oklch(87% .27 142 / .05),transparent 35%,transparent 65%,oklch(72% .27 340 / .05)),radial-gradient(circle at 20% 0%,oklch(87% .27 142 / .12),transparent 45%),radial-gradient(circle at 100% 30%,oklch(72% .27 340 / .09),transparent 40%),radial-gradient(circle at 30% 100%,oklch(87% .27 142 / .06),transparent 50%);pointer-events:none;z-index:0}
+.scroll{flex:1;overflow-y:auto;padding-top:54px;position:relative;z-index:1}
+.disp{font-family:'Anton',sans-serif}
+.mono{font-family:'IBM Plex Mono',monospace}
+.mut{color:oklch(63% .02 275)}
+.accent{color:oklch(87% .27 142)}
+.hdr{padding:6px 20px 18px}
+.eyebrow{font:600 11px/1.4 'IBM Plex Mono',monospace;letter-spacing:3px;color:oklch(87% .27 142);text-transform:uppercase;text-shadow:0 0 14px oklch(87% .27 142 / .5)}
+.title{font:400 34px/1.1 'Anton',sans-serif;letter-spacing:.5px;margin-top:8px;white-space:nowrap;font-style:italic;transform:skewX(-6deg);display:inline-block}
+.sub{color:oklch(63% .02 275);font-size:13px;margin-top:8px;line-height:1.4}
+.iconbtn{width:38px;height:38px;border-radius:12px;background:oklch(19% .022 275);border:1px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer}
+.card{background:oklch(19% .022 275);border:1px solid oklch(31% .03 275);border-radius:16px;padding:16px;margin:0 20px 14px}
+.card-label{font:700 11px 'IBM Plex Mono',monospace;letter-spacing:1.5px;color:oklch(63% .02 275);text-transform:uppercase;margin-bottom:12px}
+.pillrow{display:flex;gap:8px}
+.pill{flex:1;text-align:center;padding:14px 8px;border-radius:12px;border:1px solid oklch(31% .03 275);background:oklch(24% .024 275);color:oklch(96% .006 275);font:600 14px 'Inter',sans-serif;cursor:pointer}
+.pill.on{background:oklch(87% .27 142);color:oklch(13% .02 275);border-color:oklch(87% .27 142);box-shadow:0 0 18px oklch(87% .27 142 / .55)}
+.dayrow{display:flex;gap:8px}
+.daycirc{flex:1;aspect-ratio:1;border-radius:12px;border:1px solid oklch(31% .03 275);background:oklch(24% .024 275);color:oklch(96% .006 275);display:flex;align-items:center;justify-content:center;font:400 20px 'Anton',sans-serif;cursor:pointer}
+.daycirc.on{background:oklch(87% .27 142);color:oklch(13% .02 275);border-color:oklch(87% .27 142);box-shadow:0 0 18px oklch(87% .27 142 / .55)}
+.chipgrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{flex:1 1 27%;padding:10px 10px;border-radius:12px;border:1px solid oklch(31% .03 275);background:oklch(24% .024 275);font:600 13px 'Inter',sans-serif;cursor:pointer;color:oklch(96% .006 275);text-align:center;white-space:nowrap}
+.chip.on{background:oklch(87% .27 142 / .16);border-color:oklch(87% .27 142);color:oklch(87% .27 142);box-shadow:0 0 12px oklch(87% .27 142 / .3)}
+.cta{display:block;width:calc(100% - 40px);margin:6px 20px 24px;padding:17px;border-radius:14px;border:none;background:oklch(87% .27 142);color:oklch(13% .02 275);font:400 20px 'Anton',sans-serif;letter-spacing:1px;text-align:center;cursor:pointer;animation:glowPulse 2.6s ease-in-out infinite}
+.cta[disabled]{opacity:.3;pointer-events:none;box-shadow:none;animation:none}
+.cta.ghost{background:transparent;border:1px solid oklch(31% .03 275);color:oklch(96% .006 275);box-shadow:none;animation:none}
+.cta.secondary{background:oklch(72% .27 340);color:oklch(13% .02 275);animation:glowPulseSecondary 2.6s ease-in-out infinite}
+.formrow{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid oklch(31% .03 275)}
+.formrow:last-child{border-bottom:none}
+.formlabel{font:600 13px 'Inter',sans-serif;color:oklch(63% .02 275)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:0 20px 14px}
+.tab{flex:0 0 auto;padding:9px 15px;border-radius:999px;border:1px solid oklch(31% .03 275);background:transparent;color:oklch(96% .006 275);font:700 13px 'Inter',sans-serif;cursor:pointer;white-space:nowrap}
+.tab.on{background:oklch(87% .27 142);color:oklch(13% .02 275);border-color:oklch(87% .27 142);box-shadow:0 0 14px oklch(87% .27 142 / .5)}
+.stat{display:flex;flex-direction:column}
+.stat b{font:400 24px 'Anton',sans-serif;color:oklch(87% .27 142)}
+.stat span{font-size:10px;color:oklch(63% .02 275);text-transform:uppercase;letter-spacing:1px}
+.statrow{display:flex;gap:20px;padding:2px 20px 16px}
+.exlist{padding:4px 16px 24px;display:flex;flex-direction:column;gap:10px}
+.excard{background:oklch(19% .022 275);border:1px solid oklch(31% .03 275);border-radius:14px;overflow:hidden;animation:cardIn .35s ease both}
+.exhead{display:flex;align-items:stretch;cursor:pointer}
+.exnum{flex:0 0 auto;width:46px;background:oklch(24% .024 275);color:oklch(63% .02 275);display:flex;align-items:center;justify-content:center;font:400 20px 'Anton',sans-serif;border-right:1px solid oklch(31% .03 275)}
+.exbody{flex:1;padding:12px 14px;min-width:0}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.tag{font:800 9px 'IBM Plex Mono',monospace;letter-spacing:1px;padding:3px 7px;border-radius:5px}
+.exname{font:700 14px/1.25 'Inter',sans-serif}
+.exmuscle{color:oklch(63% .02 275);font-size:11.5px;margin-top:3px}
+.exmeta{display:flex;gap:16px;margin-top:9px;font-family:'IBM Plex Mono',monospace}
+.exmeta b{font-size:14px;color:oklch(96% .006 275)}
+.exmeta small{color:oklch(63% .02 275);font-size:9px;display:block}
+.exdetail{padding:0 14px 14px 60px;border-top:1px solid oklch(31% .03 275);animation:detailIn .22s ease both}
+.exnote{color:oklch(63% .02 275);font-size:12.5px;line-height:1.55;padding-top:12px}
+.savedcard{background:oklch(19% .022 275);border:1px solid oklch(31% .03 275);border-radius:14px;padding:14px 16px;margin:0 20px 12px;animation:cardIn .35s ease both}
+.savedname{font:400 20px 'Anton',sans-serif;letter-spacing:.5px;font-style:italic;transform:skewX(-6deg);display:inline-block}
+.savedmeta{color:oklch(63% .02 275);font-size:11.5px;margin-top:4px}
+.savedbtns{display:flex;gap:8px;margin-top:12px}
+.smallbtn{flex:1;text-align:center;padding:9px;border-radius:9px;font:600 12px 'Inter',sans-serif;cursor:pointer;border:1px solid oklch(31% .03 275)}
+.smallbtn.primary{background:oklch(87% .27 142);color:oklch(13% .02 275);border-color:oklch(87% .27 142)}
+.empty{padding:60px 30px;text-align:center;color:oklch(63% .02 275);font-size:13px;line-height:1.6}
+.modal{position:absolute;inset:0;background:oklch(0% 0 0 / .6);display:flex;align-items:flex-end;z-index:80}
+.modalcard{background:oklch(19% .022 275);border-top:1px solid oklch(31% .03 275);border-radius:20px 20px 0 0;padding:20px;width:100%}
+.input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid oklch(31% .03 275);background:oklch(24% .024 275);color:oklch(96% .006 275);font:500 14px 'Inter',sans-serif;margin:10px 0 16px}
+.input::placeholder{color:oklch(63% .02 275)}
+a{color:oklch(87% .27 142)}
+a:hover{color:oklch(90% .27 142)}
+</style></helmet><x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{true}}" hint-size="390px,844px"><div class="app"><div class="scroll">
+
+<sc-if value="{{isConfig}}" hint-placeholder-val="{{true}}">
+<div class="hdr" style="position:relative;text-align:center"><div class="iconbtn" style="position:absolute;top:6px;right:20px" onClick="{{openSaved}}">{{savedIcon}}</div><div class="eyebrow" style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="accent" style="display:flex">{{logoIcon}}</span>Generador · Hipertrofia</div><div class="title">Armá tu rutina</div><div class="sub" style="max-width:280px;margin:8px auto 0">Elegí género, días por semana y grupos musculares. El resto lo armamos nosotros.</div></div>
+
+<div class="card"><div class="card-label">1 · Género</div><div class="pillrow">
+<sc-for list="{{genderOptions}}" as="g" hint-placeholder-count="2"><button class="pill {{g.cls}}" onClick="{{g.onClick}}">{{g.label}}</button></sc-for>
+</div></div>
+<div class="card"><div class="card-label">2 · Días por semana</div><div class="dayrow">
+<sc-for list="{{daysOptions}}" as="d" hint-placeholder-count="5"><button class="daycirc {{d.cls}}" onClick="{{d.onClick}}">{{d.n}}</button></sc-for>
+</div></div>
+<div class="card"><div class="card-label">3 · Grupos musculares</div><div class="chipgrid">
+<sc-for list="{{muscleChips}}" as="m" hint-placeholder-count="7"><button class="chip {{m.cls}}" onClick="{{m.onClick}}">{{m.label}}</button></sc-for>
+</div></div>
+<button class="cta" disabled="{{ctaDisabled}}" onClick="{{generate}}">{{ctaLabel}}</button>
+</sc-if>
+
+<sc-if value="{{isRoutine}}">
+<div class="hdr"><div class="fx jb ac"><div class="iconbtn" onClick="{{backToConfig}}">{{backIcon}}</div><div class="iconbtn" onClick="{{openSaveModal}}">{{saveIcon}}</div></div>
+<div class="eyebrow" style="margin-top:14px">{{routineGenderLabel}} · {{routineDaysLabel}}</div>
+<div class="title" style="font-size:26px;white-space:normal;line-height:1.05;overflow-wrap:break-word">{{routineMuscleLabel}}</div>
+</div>
+<div class="statrow">
+<sc-for list="{{routineStats}}" as="st" hint-placeholder-count="3"><div class="stat"><b>{{st.v}}</b><span>{{st.u}}</span></div></sc-for>
+</div>
+<div class="tabs">
+<sc-for list="{{dayTabs}}" as="dt" hint-placeholder-count="3"><button class="tab {{dt.cls}}" onClick="{{dt.onClick}}">Día {{dt.num}}</button></sc-for>
+</div>
+<div style="padding:0 20px 10px"><div class="sub" style="margin:0">{{currentDayLabel}}</div></div>
+<div class="exlist">
+<sc-for list="{{currentDayEx}}" as="e" hint-placeholder-count="5">
+<div class="excard" style="animation-delay:{{e.delay}}">
+<div class="exhead" onClick="{{e.toggle}}"><div class="exnum">{{e.num}}</div>
+<div class="exbody"><div class="tagrow"><span class="tag" style="color:{{e.tagFg}};background:{{e.tagBg}}">{{e.t}}</span></div>
+<div class="exname">{{e.n}}</div><div class="exmuscle">{{e.m}}</div>
+<div class="exmeta"><span><b>{{e.s}}</b><small>SERIES</small></span><span><b>{{e.r}}</b><small>REPS</small></span><span><b>{{e.d}}</b><small>DESC</small></span></div>
+</div></div>
+<sc-if value="{{e.open}}"><div class="exdetail"><div class="exnote" style="padding-top:12px">› {{e.note}}</div></div></sc-if>
+</div>
+</sc-for>
+</div>
+<button class="cta secondary" style="margin:4px 20px 24px" onClick="{{regenerate}}">Regenerar ejercicios</button>
+</sc-if>
+
+<sc-if value="{{isSaved}}">
+<div class="hdr"><div class="fx jb ac"><div class="iconbtn" onClick="{{closeSaved}}">{{backIcon}}</div></div><div class="title" style="margin-top:14px">Mis rutinas</div><div class="sub">Rutinas guardadas para volver a entrenarlas.</div></div>
+<sc-if value="{{savedEmpty}}"><div class="empty">Todavía no guardaste ninguna rutina.<br>Generá una y tocá el ícono de guardar.</div></sc-if>
+<sc-for list="{{savedList}}" as="sv" hint-placeholder-count="0">
+<div class="savedcard" style="animation-delay:{{sv.delay}}"><div class="savedname">{{sv.name}}</div><div class="savedmeta">{{sv.meta}}</div>
+<div class="savedbtns"><button class="smallbtn primary" onClick="{{sv.load}}">Cargar</button><button class="smallbtn" onClick="{{sv.remove}}">Eliminar</button></div></div>
+</sc-for>
+</sc-if>
+
+</div>
+
+<sc-if value="{{showSaveModal}}">
+<div class="modal"><div class="modalcard"><div class="card-label">Guardar rutina</div>
+<input class="input" placeholder="Nombre de la rutina" value="{{routineNameInput}}" onChange="{{onNameChange}}">
+<div class="savedbtns"><button class="smallbtn" onClick="{{closeSaveModal}}">Cancelar</button><button class="smallbtn primary" onClick="{{confirmSave}}">Guardar</button></div>
+</div></div>
+</sc-if>
+
+</div></x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MUSCLES = [
+  { key: "pecho", label: "Pecho", weight: 2 },
+  { key: "espalda", label: "Espalda", weight: 2.5 },
+  { key: "hombros", label: "Hombros", weight: 1.5 },
+  { key: "biceps", label: "Bíceps", weight: 1 },
+  { key: "triceps", label: "Tríceps", weight: 1 },
+  { key: "piernas", label: "Piernas", weight: 3 },
+  { key: "abdominales", label: "Abdominales", weight: 1 },
+];
+
+const TYPE_COLORS = {
+  FUERZA: { fg: "oklch(13% .02 275)", bg: "oklch(87% .27 142)" },
+  SUPERSERIE: { fg: "oklch(80% .22 195)", bg: "oklch(80% .22 195 / .16)" },
+  VOLUMEN: { fg: "oklch(80% .22 70)", bg: "oklch(80% .22 70 / .16)" },
+  BURNOUT: { fg: "oklch(72% .27 340)", bg: "oklch(72% .27 340 / .16)" },
+  CORE: { fg: "oklch(78% .20 260)", bg: "oklch(78% .20 260 / .16)" },
+};
+
+const EXDB = {
+  pecho: [
+    { n: "Press de Banca con Barra", m: "Pecho (esternal)", t: "FUERZA", s: 4, r: "5–6", d: "120s", g: "ambos", note: "Movimiento principal de empuje. Bajá controlado 2s, explotá en la subida." },
+    { n: "Press Inclinado con Mancuernas", m: "Pecho (clavicular)", t: "SUPERSERIE", s: 3, r: "10–12", d: "75s", g: "ambos", note: "Ángulo 30–45°. No bloquees los codos arriba." },
+    { n: "Aperturas en Banco Inclinado", m: "Pecho clavicular (aislam.)", t: "VOLUMEN", s: 3, r: "14–16", d: "60s", g: "ambos", note: "Codos ligeramente flexionados. Bajá hasta sentir el estiramiento." },
+    { n: "Fondos en Paralelas", m: "Pecho inferior / Tríceps", t: "VOLUMEN", s: 3, r: "8–10", d: "90s", g: "hombre", note: "Inclinate hacia adelante para más pecho. Codos a 90°." },
+    { n: "Press en Máquina Convergente", m: "Pecho (general)", t: "FUERZA", s: 4, r: "8–10", d: "90s", g: "mujer", note: "Recorrido guiado, ideal para foco de técnica y control del rango." },
+    { n: "Cruce de Poleas (Crossover)", m: "Pecho (aislam.)", t: "BURNOUT", s: 3, r: "12–15", d: "60s", g: "ambos", note: "Cruzá bien adelante del cuerpo, contraé fuerte en el centro." },
+    { n: "Pullover con Mancuerna", m: "Pecho / Dorsal", t: "VOLUMEN", s: 3, r: "12–14", d: "60s", g: "ambos", note: "Brazos semi-flexionados fijos. Sentí el estiramiento en la caja torácica." },
+  ],
+  espalda: [
+    { n: "Dominadas (o Jalón al Pecho)", m: "Dorsal / Espalda ancha", t: "FUERZA", s: 4, r: "6–8", d: "120s", g: "ambos", note: "Si las dominás, añadí lastre. Agarre prono, amplitud media." },
+    { n: "Remo con Barra", m: "Espalda media / Dorsal", t: "FUERZA", s: 4, r: "6–8", d: "100s", g: "hombre", note: "Torso a 45°, espalda neutra. Tirá hacia el abdomen." },
+    { n: "Remo en Máquina Sentado", m: "Espalda media / Romboides", t: "FUERZA", s: 4, r: "8–10", d: "90s", g: "mujer", note: "Pecho en el pad. Apretá omóplatos al final del recorrido." },
+    { n: "Remo con Mancuerna Unilateral", m: "Dorsal / Trapecio", t: "SUPERSERIE", s: 3, r: "10–12", d: "75s", g: "ambos", note: "Apoyá la rodilla en el banco. Rango completo, sin rotar el torso." },
+    { n: "Remo en Polea Baja Sentado", m: "Espalda media / Romboides", t: "SUPERSERIE", s: 3, r: "12–15", d: "60s", g: "ambos", note: "Espalda neutra. Tirá hacia el ombligo, apretá omóplatos." },
+    { n: "Pull-Over en Polea Alta", m: "Dorsal (aislam.)", t: "VOLUMEN", s: 3, r: "12–15", d: "60s", g: "ambos", note: "Brazos casi rectos, movimiento desde el hombro, no el codo." },
+    { n: "Peso Muerto Rumano", m: "Dorsal / Isquiotibiales", t: "FUERZA", s: 3, r: "8–10", d: "100s", g: "ambos", note: "Cadera atrás, barra pegada a las piernas. Espalda siempre neutra." },
+  ],
+  hombros: [
+    { n: "Press Militar con Barra (OHP)", m: "Hombro anterior / medio", t: "FUERZA", s: 4, r: "6–8", d: "120s", g: "ambos", note: "De pie o sentado. No arquees la espalda baja en exceso." },
+    { n: "Press Arnold con Mancuernas", m: "Hombro (3 cabezas)", t: "FUERZA", s: 3, r: "8–10", d: "90s", g: "mujer", note: "Rotá las muñecas al subir. Buen recorrido y estabilidad." },
+    { n: "Elevaciones Laterales", m: "Deltoides lateral", t: "SUPERSERIE", s: 4, r: "12–15", d: "60s", g: "ambos", note: "Codos ligeramente flexionados. Hasta altura de hombros." },
+    { n: "Laterales en Polea", m: "Deltoides lateral", t: "SUPERSERIE", s: 4, r: "12–15", d: "60s", g: "ambos", note: "Tensión constante todo el recorrido, ideal para hombros anchos." },
+    { n: "Face Pull en Polea", m: "Hombro posterior / Manguito", t: "SUPERSERIE", s: 3, r: "15–20", d: "60s", g: "ambos", note: "Cuerda a altura de frente. Esencial para la salud del hombro." },
+    { n: "Pájaro / Elevaciones Posteriores", m: "Deltoides posterior", t: "VOLUMEN", s: 3, r: "15–18", d: "60s", g: "ambos", note: "Torso paralelo al suelo. Pecho ancho, sin balanceo." },
+    { n: "Press Tras Nuca en Máquina", m: "Hombro (general)", t: "VOLUMEN", s: 3, r: "10–12", d: "75s", g: "hombre", note: "Recorrido controlado, sin forzar la movilidad del hombro." },
+  ],
+  biceps: [
+    { n: "Curl con Barra EZ", m: "Bíceps (cabeza larga)", t: "SUPERSERIE", s: 3, r: "8–10", d: "75s", g: "ambos", note: "No balancees el torso. Codos pegados al cuerpo." },
+    { n: "Curl Martillo con Mancuernas", m: "Bíceps / Braquial", t: "SUPERSERIE", s: 3, r: "12–15", d: "60s", g: "ambos", note: "Agarre neutro. Trabaja braquial y braquiorradial." },
+    { n: "Curl Concentrado", m: "Bíceps (pico)", t: "BURNOUT", s: 2, r: "12+8+6", d: "45s", g: "ambos", note: "Drop set: reducí 20–30% por drop. Contraé al máximo arriba." },
+    { n: "Curl Predicador en Máquina Scott", m: "Bíceps (cabeza corta)", t: "VOLUMEN", s: 3, r: "10–12", d: "60s", g: "ambos", note: "El apoyo elimina el balanceo. Bajá a extensión casi completa." },
+    { n: "Curl en Polea Baja", m: "Bíceps (tensión constante)", t: "VOLUMEN", s: 3, r: "12–15", d: "60s", g: "mujer", note: "La polea mantiene tensión en todo el rango, buena para definición." },
+    { n: "Curl 21s con Barra", m: "Bíceps (rango completo)", t: "BURNOUT", s: 2, r: "21", d: "60s", g: "hombre", note: "7 reps parciales abajo, 7 arriba, 7 completas. Sin soltar la barra." },
+    { n: "Curl Spider en Banco", m: "Bíceps (aislam. estricto)", t: "VOLUMEN", s: 3, r: "10–12", d: "60s", g: "ambos", note: "Pecho apoyado en el banco inclinado, cero impulso." },
+  ],
+  triceps: [
+    { n: "Press Cerrado en Banca", m: "Tríceps / Pecho", t: "FUERZA", s: 4, r: "6–8", d: "100s", g: "ambos", note: "Agarre a la altura de los hombros. Codos pegados al bajar." },
+    { n: "Press Francés con Barra EZ", m: "Tríceps (cabeza larga)", t: "VOLUMEN", s: 3, r: "12–14", d: "75s", g: "ambos", note: "Codos fijos apuntando al techo. Bajá controlado hasta la frente." },
+    { n: "Extensión Tríceps en Polea", m: "Tríceps (lateral/medial)", t: "BURNOUT", s: 3, r: "12+10+8", d: "45s", g: "ambos", note: "Drop set: sin descanso entre drops, reducí 20–25%." },
+    { n: "Fondos entre Bancos", m: "Tríceps / Pecho inferior", t: "VOLUMEN", s: 3, r: "10–12", d: "75s", g: "hombre", note: "Pies apoyados en otro banco para mayor dificultad." },
+    { n: "Patada de Tríceps con Mancuerna", m: "Tríceps (aislam.)", t: "VOLUMEN", s: 3, r: "12–15", d: "60s", g: "mujer", note: "Torso paralelo al suelo, extendé el brazo completo y contraé." },
+    { n: "Extensión Tríceps en Polea (Cuerda)", m: "Tríceps (cabeza lateral)", t: "VOLUMEN", s: 3, r: "12–15", d: "60s", g: "ambos", note: "Abrí la cuerda al bajar. Codos siempre pegados al cuerpo." },
+    { n: "Extensión Overhead con Mancuerna", m: "Tríceps (cabeza larga)", t: "VOLUMEN", s: 3, r: "10–12", d: "60s", g: "ambos", note: "Mancuerna detrás de la nuca, codos apuntando al frente." },
+  ],
+  piernas: [
+    { n: "Sentadilla con Barra (Back Squat)", m: "Cuádriceps / Glúteos / Core", t: "FUERZA", s: 5, r: "5–6", d: "150s", g: "ambos", note: "El rey del tren inferior. Rodillas alineadas con pies, pecho arriba." },
+    { n: "Hip Thrust con Barra", m: "Glúteos", t: "FUERZA", s: 4, r: "8–10", d: "120s", g: "mujer", note: "Barbilla al pecho, empujá con talones, contraé fuerte arriba." },
+    { n: "Sentadilla Búlgara con Mancuernas", m: "Cuádriceps / Glúteos (unilateral)", t: "FUERZA", s: 4, r: "8–10 c/lado", d: "120s", g: "hombre", note: "Buen sustituto del peso muerto: mismo estímulo de fuerza sin cargar la zona lumbar. Torso erguido, rodilla trasera casi al piso." },
+    { n: "Prensa de Piernas", m: "Cuádriceps / Glúteos", t: "VOLUMEN", s: 4, r: "10–12", d: "90s", g: "ambos", note: "Rango completo, no bloquees rodillas arriba." },
+    { n: "Zancadas con Mancuernas", m: "Cuádriceps / Glúteos (unilateral)", t: "VOLUMEN", s: 3, r: "10–12 c/lado", d: "75s", g: "ambos", note: "Paso amplio, rodilla trasera casi al piso, torso erguido." },
+    { n: "Extensión de Cuádriceps", m: "Cuádriceps (aislam.)", t: "VOLUMEN", s: 4, r: "15–18", d: "75s", g: "ambos", note: "Pausá 1s arriba. Alta repetición para congestión." },
+    { n: "Curl Femoral Acostado", m: "Isquiotibiales", t: "VOLUMEN", s: 4, r: "10–12", d: "75s", g: "ambos", note: "Contraé glúteos al curlar. La excéntrica es clave." },
+    { n: "Curl Femoral Parado Unilateral", m: "Isquiotibiales (unilateral)", t: "BURNOUT", s: 3, r: "12–14 c/lado", d: "60s", g: "ambos", note: "Contraé al máximo arriba y bajá lento. Cadera estable." },
+    { n: "Elevación de Talones de Pie", m: "Gemelos", t: "VOLUMEN", s: 4, r: "15–20", d: "60s", g: "ambos", note: "Rango completo, pausa arriba y estiramiento total abajo." },
+  ],
+  abdominales: [
+    { n: "Elevación de Piernas Colgado", m: "Abdomen (recto inf.)", t: "CORE", s: 3, r: "12–15", d: "45s", g: "ambos", note: "Piernas rectas o semi-flexionadas, sin balanceo del cuerpo." },
+    { n: "Crunch en Polea con Cuerda", m: "Recto abdominal", t: "CORE", s: 3, r: "15–18", d: "45s", g: "ambos", note: "Rodillas en el suelo, contraé hacia las rodillas, no tires con brazos." },
+    { n: "Plancha", m: "Core (isométrico)", t: "CORE", s: 3, r: "45–60s", d: "45s", g: "ambos", note: "Cuerpo en línea recta, sin dejar caer la cadera." },
+    { n: "Rueda Abdominal (Ab Wheel)", m: "Core completo", t: "CORE", s: 3, r: "8–10", d: "60s", g: "hombre", note: "Espalda neutra, no dejes caer la cadera al extender." },
+    { n: "Crunch Inverso en Banco", m: "Abdomen (recto inf.)", t: "CORE", s: 3, r: "15–18", d: "45s", g: "mujer", note: "Cadera despegada del banco con control, sin impulso." },
+    { n: "Crunch en Máquina", m: "Recto abdominal", t: "CORE", s: 3, r: "15–18", d: "60s", g: "ambos", note: "Contraé el abdomen, no jales con los brazos ni el cuello." },
+    { n: "Giro Ruso con Disco", m: "Oblicuos", t: "CORE", s: 3, r: "15–20 c/lado", d: "45s", g: "ambos", note: "Pies elevados si podés, rotá desde el torso, no los brazos." },
+  ],
+};
+
+function mulberry32(seed) {
+  return function () {
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return h; }
+function shuffle(arr, rng) { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+function buildDaySplit(muscleKeys, days) {
+  const k = muscleKeys.length;
+  if (k === 0) return [];
+  const weightOf = (key) => (MUSCLES.find((m) => m.key === key) || {}).weight || 1;
+  if (days >= k) {
+    let alloc = muscleKeys.map((m) => ({ m, d: 1 }));
+    let remaining = days - k;
+    while (remaining > 0) {
+      alloc.sort((a, b) => weightOf(b.m) / b.d - weightOf(a.m) / a.d);
+      alloc[0].d++; remaining--;
+    }
+    alloc.sort((a, b) => weightOf(b.m) - weightOf(a.m));
+    const list = [];
+    alloc.forEach((a) => { for (let i = 0; i < a.d; i++) list.push([a.m]); });
+    return list.slice(0, days);
+  }
+  const buckets = Array.from({ length: days }, () => []);
+  muscleKeys.forEach((m, i) => buckets[i % days].push(m));
+  return buckets;
+}
+
+function pickExercisesForMuscle(muscleKey, gender, count, seedKey) {
+  const pool = (EXDB[muscleKey] || []).filter((e) => e.g === "ambos" || e.g === gender);
+  const rng = mulberry32(hashStr(muscleKey + seedKey));
+  let shuffled = shuffle(pool, rng);
+  const fIdx = shuffled.findIndex((e) => e.t === "FUERZA");
+  if (fIdx > 0) { const [f] = shuffled.splice(fIdx, 1); shuffled.unshift(f); }
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+function buildRoutine(gender, days, muscleKeys, seed) {
+  const split = buildDaySplit(muscleKeys, days);
+  return split.map((musclesInDay, i) => {
+    const perMuscle = musclesInDay.length === 1 ? 5 : musclesInDay.length === 2 ? 3 : musclesInDay.length === 3 ? 2 : 1;
+    let ex = [];
+    musclesInDay.forEach((mk) => {
+      const picks = pickExercisesForMuscle(mk, gender, perMuscle, seed + "-" + i + "-" + mk);
+      picks.forEach((p) => ex.push({ ...p, muscleKey: mk }));
+    });
+    const label = musclesInDay.map((mk) => MUSCLES.find((m) => m.key === mk).label).join(" + ");
+    return { key: "day" + i, muscles: musclesInDay, label, ex };
+  });
+}
+
+const ICON_SAVE = React.createElement("svg", { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none" },
+  React.createElement("path", { d: "M5 3h11l3 3v15H5V3z", stroke: "currentColor", strokeWidth: 1.8, strokeLinejoin: "round" }),
+  React.createElement("path", { d: "M8 3v6h8V3M8 21v-7h8v7", stroke: "currentColor", strokeWidth: 1.8, strokeLinejoin: "round" }));
+const ICON_LIST = React.createElement("svg", { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none" },
+  React.createElement("path", { d: "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" }));
+const ICON_BACK = React.createElement("svg", { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none" },
+  React.createElement("path", { d: "M15 5l-7 7 7 7", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }));
+const ICON_LOGO = React.createElement("svg", { width: 15, height: 15, viewBox: "0 0 32 32", fill: "none" },
+  React.createElement("rect", { x: 9.5, y: 14.5, width: 13, height: 3, fill: "currentColor" }),
+  React.createElement("rect", { x: 7, y: 11, width: 2.5, height: 10, rx: 1, fill: "currentColor" }),
+  React.createElement("rect", { x: 22.5, y: 11, width: 2.5, height: 10, rx: 1, fill: "currentColor" }),
+  React.createElement("rect", { x: 2, y: 8, width: 4, height: 16, rx: 1.3, fill: "currentColor" }),
+  React.createElement("rect", { x: 26, y: 8, width: 4, height: 16, rx: 1.3, fill: "currentColor" }));
+
+class Component extends DCLogic {
+  state = {
+    screen: "config",
+    gender: "hombre", days: 3, muscles: ["pecho", "espalda", "piernas"],
+    seed: "seed-1", activeDay: 0, openEx: 0,
+    saved: [], showSaveModal: false, routineNameInput: "",
+  };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem("rutinas-hipertrofia-saved");
+      if (raw) this.setState({ saved: JSON.parse(raw) });
+    } catch (e) {}
+  }
+
+  persist(saved) {
+    this.setState({ saved });
+    try { localStorage.setItem("rutinas-hipertrofia-saved", JSON.stringify(saved)); } catch (e) {}
+  }
+
+  setGender(g) { this.setState({ gender: g }); }
+  setDays(n) { this.setState({ days: n }); }
+  toggleMuscle(k) {
+    this.setState((s) => ({ muscles: s.muscles.includes(k) ? s.muscles.filter((x) => x !== k) : [...s.muscles, k] }));
+  }
+  generate() {
+    if (this.state.muscles.length === 0) return;
+    this.setState({ screen: "routine", seed: "seed-" + Date.now(), activeDay: 0, openEx: 0 });
+  }
+  regenerate() { this.setState({ seed: "seed-" + Date.now(), openEx: null }); }
+  backToConfig() { this.setState({ screen: "config" }); }
+  openSaved() { this.setState({ screen: "saved" }); }
+  closeSaved() { this.setState({ screen: this.state.savedFrom === "routine" ? "routine" : "config" }); }
+  openSaveModal() { this.setState({ showSaveModal: true, routineNameInput: "" }); }
+  closeSaveModal() { this.setState({ showSaveModal: false }); }
+  onNameChange(e) { this.setState({ routineNameInput: e.target.value }); }
+  confirmSave() {
+    const s = this.state;
+    const name = s.routineNameInput.trim() || ("Rutina " + (s.saved.length + 1));
+    const genderLabel = s.gender === "hombre" ? "Hombre" : "Mujer";
+    const item = {
+      id: "r" + Date.now(), name, gender: s.gender, days: s.days, muscles: s.muscles, seed: s.seed,
+      meta: genderLabel + " · " + s.days + " día" + (s.days > 1 ? "s" : "") + " · " + s.muscles.map((k) => MUSCLES.find((m) => m.key === k).label).join(", "),
+    };
+    this.persist([item, ...s.saved]);
+    this.setState({ showSaveModal: false });
+  }
+  loadSaved(item) {
+    this.setState({ gender: item.gender, days: item.days, muscles: item.muscles, seed: item.seed, screen: "routine", activeDay: 0, openEx: null });
+  }
+  deleteSaved(id) { this.persist(this.state.saved.filter((s) => s.id !== id)); }
+
+  renderVals() {
+    const s = this.state;
+    const genderOptions = [
+      { key: "hombre", label: "Hombre", cls: s.gender === "hombre" ? "on" : "", onClick: () => this.setGender("hombre") },
+      { key: "mujer", label: "Mujer", cls: s.gender === "mujer" ? "on" : "", onClick: () => this.setGender("mujer") },
+    ];
+    const daysOptions = [1, 2, 3, 4, 5].map((n) => ({ n, cls: s.days === n ? "on" : "", onClick: () => this.setDays(n) }));
+    const muscleChips = MUSCLES.map((m) => ({ key: m.key, label: m.label, cls: s.muscles.includes(m.key) ? "on" : "", onClick: () => this.toggleMuscle(m.key) }));
+    const ctaDisabled = s.muscles.length === 0;
+
+    let routine = [];
+    if (s.screen === "routine") routine = buildRoutine(s.gender, s.days, s.muscles, s.seed);
+    const dayTabs = routine.map((d, i) => ({ i, num: i + 1, cls: i === s.activeDay ? "on" : "", onClick: () => this.setState({ activeDay: i, openEx: null }) }));
+    const currentDay = routine[s.activeDay] || { ex: [], label: "" };
+    const currentDayEx = currentDay.ex.map((e, i) => {
+      const tc = TYPE_COLORS[e.t];
+      return { ...e, num: i + 1, open: s.openEx === i, tagFg: tc.fg, tagBg: tc.bg, delay: (i * 45) + "ms", toggle: () => this.setState({ openEx: s.openEx === i ? null : i }) };
+    });
+    const totalEx = routine.reduce((a, d) => a + d.ex.length, 0);
+    const routineStats = [
+      { v: routine.length, u: "días" },
+      { v: totalEx, u: "ejercicios" },
+      { v: s.muscles.length, u: "músculos" },
+    ];
+
+    const savedList = s.saved.map((sv, i) => ({
+      ...sv,
+      delay: (i * 45) + "ms",
+      load: () => this.loadSaved(sv),
+      remove: () => this.deleteSaved(sv.id),
+    }));
+
+    return {
+      isConfig: s.screen === "config", isRoutine: s.screen === "routine", isSaved: s.screen === "saved",
+      genderOptions, daysOptions, muscleChips, ctaDisabled, ctaLabel: "Generar rutina",
+      generate: () => this.generate(),
+      savedIcon: ICON_LIST, backIcon: ICON_BACK, saveIcon: ICON_SAVE, logoIcon: ICON_LOGO,
+      openSaved: () => this.setState({ screen: "saved", savedFrom: "config" }),
+      closeSaved: () => this.closeSaved(),
+      backToConfig: () => this.backToConfig(),
+      openSaveModal: () => this.openSaveModal(),
+      routineGenderLabel: s.gender === "hombre" ? "Hombre" : "Mujer",
+      routineDaysLabel: s.days + " día" + (s.days > 1 ? "s" : "") + "/sem",
+      routineMuscleLabel: s.muscles.map((k) => MUSCLES.find((m) => m.key === k).label).join(" + ") || "Rutina",
+      routineStats, dayTabs, currentDayLabel: currentDay.label, currentDayEx,
+      regenerate: () => this.regenerate(),
+      isSavedScreen: s.screen === "saved", savedEmpty: s.saved.length === 0, savedList,
+      showSaveModal: s.showSaveModal, routineNameInput: s.routineNameInput,
+      onNameChange: (e) => this.onNameChange(e), closeSaveModal: () => this.closeSaveModal(), confirmSave: () => this.confirmSave(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
