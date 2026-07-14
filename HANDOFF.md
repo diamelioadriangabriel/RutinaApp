@@ -91,7 +91,7 @@ Estado necesario (nombres tal cual el prototipo, adaptar a lo que use el codebas
 - Fondo de la app tiene además un gradiente decorativo muy sutil: combinación de `linear-gradient` diagonal + 3 `radial-gradient` en las esquinas, mezclando el verde y el magenta al 5-12% de opacidad.
 
 **Tipografía:**
-- Display/títulos/números grandes: **Bebas Neue** (Google Fonts), regular, mayúsculas visualmente por diseño de la fuente.
+- Display/títulos/números grandes: **Anton** (Google Fonts), regular, mayúsculas visualmente por diseño de la fuente.
 - Texto de cuerpo, labels, botones: **Inter** (400 a 800).
 - Datos/stats/mono (series, reps, descanso, eyebrow): **IBM Plex Mono** (400-600).
 

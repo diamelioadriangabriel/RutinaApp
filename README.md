@@ -39,6 +39,6 @@ Los archivos en `design_source/` son un **prototipo funcional construido en HTML
 ## Stack técnico del prototipo
 
 - HTML + React (vía runtime del entorno de diseño, sin build step)
-- Fuentes: Bebas Neue (títulos), Inter (texto), IBM Plex Mono (datos/stats) — Google Fonts
+- Fuentes: Anton (títulos), Inter (texto), IBM Plex Mono (datos/stats) — Google Fonts
 - Sin backend: toda la generación de rutinas y el guardado de "mis rutinas" corre en el cliente, con `localStorage` para persistir rutinas guardadas
 - Marco de iPhone (`ios-frame.jsx`) usado solo para la presentación visual del prototipo
