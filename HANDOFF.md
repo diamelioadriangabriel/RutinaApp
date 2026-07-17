@@ -104,6 +104,9 @@ Estado necesario (nombres tal cual el prototipo, adaptar a lo que use el codebas
 - Ícono de mancuerna inline (SVG simple, 5 rectángulos) usado junto al eyebrow del header — ver `ICON_LOGO` en el código fuente.
 - Sin fotos/videos reales: los ejercicios no tienen imagen; se decidió explícitamente no usar placeholders de imagen en el detalle expandido (solo texto).
 
+## Update log
+- Se eliminó el bezel de iPhone (`ios-frame.jsx` ya no se usa en el render principal, queda solo como referencia en `design_source/`). La app renderiza su propio contenedor (`.app`), centrado y con `max-width:480px`, y se adapta con un media query a pantallas de escritorio (recuadro con bordes redondeados y sombra) sin dejar espacio en blanco/negro sobrante.
+
 ## Files
 - `design_source/Generador de Rutinas.dc.html` — archivo principal: template + lógica (clase `Component`) + base de datos de ejercicios (`EXDB`, 7 grupos musculares × 6-9 ejercicios cada uno) + algoritmo de generación de rutinas.
 - `design_source/ios-frame.jsx` — componente de marco de iPhone (bezel, status bar, home indicator) usado solo para la presentación visual del prototipo; no es parte de la lógica de la app.

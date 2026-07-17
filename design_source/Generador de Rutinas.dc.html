@@ -3,16 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#0d1a12"/><g fill="#7ee81f"><rect x="150" y="130" width="65" height="15"/><rect x="120" y="105" width="12" height="50" rx="4"/><rect x="268" y="105" width="12" height="50" rx="4"/><rect x="90" y="90" width="20" height="80" rx="6"/><rect x="290" y="90" width="20" height="80" rx="6"/></g></svg></template>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet data-dc-atomics=""><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{height:100%}
 body{margin:0}
-x-dc{display:block;height:100%}
 ::-webkit-scrollbar{display:none}
 @keyframes screenIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -23,9 +20,12 @@ x-dc{display:block;height:100%}
 .pill:active,.daycirc:active,.chip:active,.cta:active,.tab:active,.iconbtn:active,.smallbtn:active{transform:scale(.94)}
 .pill:active,.daycirc:active,.chip:active,.tab:active{box-shadow:0 0 16px oklch(87% .27 142 / .35)}
 .iconbtn:active,.smallbtn:active{box-shadow:0 0 14px oklch(96% .006 275 / .3)}
-.app{width:100%;height:100%;background:oklch(13% .02 275);color:oklch(96% .006 275);font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;overflow:hidden;position:relative}
+body{background:oklch(9% .015 275)}
+.appwrap{width:100%;min-height:100vh;display:flex;justify-content:center}
+.app{width:100%;max-width:480px;min-height:100vh;background:oklch(13% .02 275);color:oklch(96% .006 275);font-family:'Inter',system-ui,sans-serif;display:flex;flex-direction:column;overflow:hidden;position:relative}
+@media (min-width:700px){.app{min-height:min(100vh,900px);margin:24px 0;border-radius:28px;box-shadow:0 30px 80px oklch(0% 0 0 / .5)}}
 .app::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,oklch(87% .27 142 / .05),transparent 35%,transparent 65%,oklch(72% .27 340 / .05)),radial-gradient(circle at 20% 0%,oklch(87% .27 142 / .12),transparent 45%),radial-gradient(circle at 100% 30%,oklch(72% .27 340 / .09),transparent 40%),radial-gradient(circle at 30% 100%,oklch(87% .27 142 / .06),transparent 50%);pointer-events:none;z-index:0}
-.scroll{flex:1;overflow-y:auto;padding-top:0;position:relative;z-index:1}
+.scroll{flex:1;overflow-y:auto;padding-top:10px;position:relative;z-index:1}
 .disp{font-family:'Anton',sans-serif}
 .mono{font-family:'IBM Plex Mono',monospace}
 .mut{color:oklch(63% .02 275)}
@@ -87,7 +87,7 @@ x-dc{display:block;height:100%}
 .input::placeholder{color:oklch(63% .02 275)}
 a{color:oklch(87% .27 142)}
 a:hover{color:oklch(90% .27 142)}
-</style></helmet><div class="app"><div class="scroll">
+</style></helmet><div class="appwrap"><div class="app"><div class="scroll">
 
 <sc-if value="{{isConfig}}" hint-placeholder-val="{{true}}">
 <div class="hdr" style="position:relative;text-align:center"><div class="iconbtn" style="position:absolute;top:6px;right:20px" onClick="{{openSaved}}">{{savedIcon}}</div><div class="eyebrow" style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="accent" style="display:flex">{{logoIcon}}</span>Generador · Hipertrofia</div><div class="title">Armá tu rutina</div><div class="sub" style="max-width:280px;margin:8px auto 0">Elegí género, días por semana y grupos musculares. El resto lo armamos nosotros.</div></div>
@@ -149,7 +149,7 @@ a:hover{color:oklch(90% .27 142)}
 </div></div>
 </sc-if>
 
-</div>
+</div></div></div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const MUSCLES = [
