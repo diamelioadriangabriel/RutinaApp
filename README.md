@@ -32,9 +32,6 @@ git push -u origin main
 
 Con GitHub Pages podés además publicarlo como sitio web gratis: Settings → Pages → Deploy from branch → `main` → carpeta `/docs`. Así cualquiera puede probarlo desde un link, sin instalar nada.
 
-## Novedades de esta versión
-- Se quitó el marco de teléfono simulado (notch, hora, batería, antena): la app ahora se adapta directamente al viewport real del navegador, tanto en celular como en PC (centrada, ancho máx. 480px, con esquinas redondeadas en pantallas grandes).
-
 ## Sobre los archivos de diseño
 
 Los archivos en `design_source/` son un **prototipo funcional construido en HTML/React**, hecho como diseño de referencia de alta fidelidad (hifi): colores, tipografía, animaciones y comportamiento están definidos y son los finales. Corren con un runtime propio del entorno de diseño (`support.js`), no con una toolchain estándar de React (sin bundler, sin npm). Es perfectamente funcional y testeable tal cual (ver `docs/index.html`), pero si el objetivo final es integrarlo a una app de producción real (por ejemplo con Next.js, React Native, SwiftUI, etc.), lo recomendable es **recrear este diseño usando el stack y los componentes ya establecidos en ese codebase**, tomando este prototipo como referencia exacta de UI y comportamiento — no copiar el HTML tal cual. `HANDOFF.md` tiene el detalle necesario para hacer esa recreación sin necesidad de haber estado en la conversación original.
